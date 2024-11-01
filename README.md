@@ -1,2 +1,2 @@
-# Yaz-l-m-Mimarisi
+# Yazilim -Mimarisi
 Yazılım Mimarisi dersi Java Dili uygulamaları
