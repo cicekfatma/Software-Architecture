@@ -31,3 +31,44 @@ Ticari binek otomobilin markası: Tofaş
 Ticari binek otomobilin modeli: Kartal
 Ticari binek otomobilin bagaj kapasitesi: 250LT
 
+
+
+
+
+//Parent-Base-Temel-Ana Sınıf
+public class Otomobil {
+    String Marka, Model;
+    Otomobil(String Marka, String Model){
+        this.Marka=Marka; this.Model=Model;
+        System.out.println(this.Marka+" "+this.Model);
+    }
+
+    public void OtomobilGoruntule(){
+        //this.Marka=Marka; this.Model=Model;
+        System.out.println("Otomobilin markası: " + this.Marka+ " \nOtomobilin modeli: "+this.Model);
+    }
+
+}
+
+public class Binek extends Otomobil{
+    String YakitTuru;
+    Binek(String Marka, String Model){
+        super(Marka,Model);
+    }
+    public void BinekOtomobilGoruntule(String YakitTuru){
+        System.out.println("Binek otomobilin markası: " +this.Marka+" \nBinek otomobilin modeli:  "+this.Model+" \nBinek otomobilin yakıt türü:  "+YakitTuru);
+    }
+
+}
+public class TicariBinek extends Binek{
+        TicariBinek(String Marka, String Model){
+        super(Marka,Model);
+    }
+    String BagajKapasitesi;
+    public void TicariBinekOtomobilGoruntule(String Marka, String Model, String BagajKapasitesi){
+        System.out.println("Ticari binek otomobilin markası: "+ Marka+ " \nTicari binek otomobilin modeli: " +Model+" \nTicari binek otomobilin bagaj kapasitesi: "+BagajKapasitesi);
+    }
+}
+
+
+
