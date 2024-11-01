@@ -17,7 +17,7 @@ interface Firin {
     boolean TurboVarmi();
 }
 
-class MikroDalga implements Firin {
+class mikroDalga implements Firin {
     @Override
     public void rafSayisi() {
         System.out.println("4 raf bulunuyor");
