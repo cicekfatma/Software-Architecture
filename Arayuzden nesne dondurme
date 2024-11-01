@@ -1,0 +1,71 @@
+Katılımcıları aşağıdaki gibi verilmiş olan fabrika desenini aşağıdaki çıktıyı verecek şekilde kodlayınız.
+-ISekilSablonu -> Geri dönüşsüz Cevre ve Alan metotları
+-Dikdortgen sınıfı ISekilSablonu nu implement edecek
+-Ucgen sınıfı ISekilSablonu nu implement edecek
+-SekilFabrikasi sınıfı SekilOlustur metotunda SekilNumarasi argümanına göre ISekilSablonu arayüzünden nesne döndürecek.
+
+For example:
+
+Sonuç
+Dikdörtgenin alanı hesaplandı
+Dikdörtgenin çevresi hesaplandı
+Üçgenin Alanı Hesaplandı
+Üçgenin Çevresi Hesaplandı
+
+
+code
+
+interface ISekilSablonu {
+    public void Cevre();
+    public void Alan();
+}
+
+class Dikdortgen implements ISekilSablonu {
+    @Override
+    public void Cevre() {
+        System.out.println("Dikdörtgenin çevresi hesaplandı");
+    }
+
+    @Override
+    public void Alan() {
+        System.out.println("Dikdörtgenin alanı hesaplandı");
+    }
+}
+
+class Ucgen implements ISekilSablonu {
+    @Override
+    public void Cevre() {
+        System.out.println("Üçgenin Çevresi Hesaplandı");
+    }
+
+    @Override
+    public void Alan() {
+        System.out.println("Üçgenin Alanı Hesaplandı");
+    }
+}
+
+class SekilFabrikasi {
+    public ISekilSablonu SekilOlustur(int sekilNumarasi) {
+        if (sekilNumarasi == 1) {
+            return new Dikdortgen();
+        } else if (sekilNumarasi == 2) {
+            return new Ucgen();
+        }
+        else {
+            throw new IllegalArgumentException("Geçersiz şekil numarası");
+        }
+}}
+
+public class Main {
+    public static void main(String[] args) {
+        SekilFabrikasi sekilFabrikasi = new SekilFabrikasi();
+
+        ISekilSablonu sekil1 = sekilFabrikasi.SekilOlustur(1);
+        sekil1.Alan();
+        sekil1.Cevre();
+
+        ISekilSablonu sekil2 = sekilFabrikasi.SekilOlustur(2);
+        sekil2.Alan();
+        sekil2.Cevre();
+    }
+}
