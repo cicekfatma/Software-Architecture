@@ -1,0 +1,30 @@
+Aşağıda tanımlanan kodu yazınız.
+Firin arayüzünde bulunacak metotlar:  
+void rafSayisi();
+ boolean TurboVarmi();
+mikroDalga sadece Firin arayüzünü uygulayacak(implement edecek).
+
+Açıklama: Her denemede 0.5 puan kesilecektir. Sınırsız deneme hakkı vardır.
+For example:
+
+Sonuç
+4 raf bulunuyor
+true
+
+
+interface Firin {
+    void rafSayisi();
+    boolean TurboVarmi();
+}
+
+class MikroDalga implements Firin {
+    @Override
+    public void rafSayisi() {
+        System.out.println("4 raf bulunuyor");
+    }
+
+    @Override
+    public boolean TurboVarmi() {
+        return true;
+    }
+}
