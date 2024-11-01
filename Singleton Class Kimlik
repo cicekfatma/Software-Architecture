@@ -1,0 +1,32 @@
+Aşağıdaki çıktıyı verecek şekilde sadece singleton sınıfını (desenini) kodlayınız.
+-Singleton sınıfınfa kimlikOlustur() metodu static olup "Kimlik" sınıfından nesne döndürecek,
+- kimlikGoruntule() metodu örnekteki stringi ve nesnenin bilgilerini gösterecek.
+For example:
+
+Sonuç
+1. Nesne: Kimlik nesnesi tek kopya olarak oluşturuldu: Kimlik@372f7a8d
+2. Nesne: Kimlik nesnesi tek kopya olarak oluşturuldu: Kimlik@372f7a8d
+
+
+code
+
+public class Kimlik {
+   
+   private static Kimlik kimlikInstance;
+
+  
+   private Kimlik() {}
+
+   
+   public static Kimlik kimlikOlustur() {
+       if (kimlikInstance == null) {
+           kimlikInstance = new Kimlik();
+       }
+       return kimlikInstance;
+   }
+
+   
+   public String kimlikGoruntule() {
+       return "Kimlik nesnesi tek kopya olarak oluşturuldu: " + this;
+   }
+}
